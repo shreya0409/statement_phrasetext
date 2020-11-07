@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body style="background-color:powderblue;">
+ <div class="login">
+	<h1>STATEMENT PHRASE TEXT PREDICTION</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+	    <input type="text" name="AUTH_GROUP" placeholder="AUTH_GROUP" required="required" />
+        <input type="text" name="BRAND" placeholder="BRAND" required="required" />
+		<input type="text" name="VALIDITY_AREA" placeholder="VALIDITY_AREA" required="required" />
+		<input type="text" name="LANGUAGE" placeholder="LANGUAGE" required="required" />
+		<input type="text" name="TFC_CLASS" placeholder="TFC_CLASS" required="required" />
+		<input type="text" name="TFC_SUBCLASS" placeholder="TFC_SUBCLASS" required="required" />
+		<input type="text" name="TFC_TYPE" placeholder="TFC_TYPE" required="required" />
+		<input type="text" name="PAM_Spec_type" placeholder="PAM_Spec_type" required="required" />
+	    <input type="text" name="PAM_COMP_CLASS" placeholder="PAM_COMP_CLASS" required="required" />
+		<input type="text" name="PAM_COMP_COMM" placeholder="PAM_COMP_COMM" required="required" />
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
